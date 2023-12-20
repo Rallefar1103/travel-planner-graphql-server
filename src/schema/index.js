@@ -8,7 +8,7 @@ async function startServer() {
 
   // passing the schemas and resolvers to the server
   const server = new ApolloServer({
-    itineraryType,
+    typeDefs: itineraryType,
     resolvers: itineraryResolvers,
   });
 

@@ -16,7 +16,8 @@ const itineraryResolvers = {
     },
   },
   Mutation: {
-    // Resolver to create a new itinerary
+    // Resolver to create a new itinerary from the graphql mutation on the frotend
+    //Here, itineraryInput contains the data sent from the frontend (e.g., title, description).
     createItinerary: async (_, { itineraryInput }) => {
       try {
         const response = await axios.post(
