@@ -1,13 +1,16 @@
 const express = require("express");
 const { ApolloServer } = require("apollo-server-express");
-const { typeDefs } = require(".");
-const { resolvers } = require("../resolvers/resolvers");
+const itineraryType = require("./types/itinerary");
+const itineraryResolvers = require("../resolvers/itineraryResolvers");
 
 async function startServer() {
   const app = express();
 
   // passing the schemas and resolvers to the server
-  const server = new ApolloServer({ typeDefs, resolvers });
+  const server = new ApolloServer({
+    itineraryType,
+    resolvers: itineraryResolvers,
+  });
 
   await server.start();
 

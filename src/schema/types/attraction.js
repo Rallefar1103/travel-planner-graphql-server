@@ -11,3 +11,5 @@ const attractionType = gql`
         // Other attraction fields...
     }
 `;
+
+module.exports = attractionType;
