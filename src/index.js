@@ -5,9 +5,13 @@ const { resolvers } = require("./resolvers");
 
 async function startServer() {
   const app = express();
+
+  // passing the schemas and resolvers to the server
   const server = new ApolloServer({ typeDefs, resolvers });
 
   await server.start();
+
+  // Allows the GraphQL server to be accessed via an HTTP endpoint.
   server.applyMiddleware({ app });
 
   app.listen({ port: 4000 }, () =>
