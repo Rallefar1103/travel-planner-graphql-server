@@ -1,6 +1,7 @@
 const axios = require("axios");
+require("dotenv").config();
 
-const baseURL = "http://travel-planner-core-service/api"; // Replace with actual URL of your service
+const baseURL = process.env.CORE_SERVICE_URL;
 
 const itineraryResolvers = {
   Query: {
