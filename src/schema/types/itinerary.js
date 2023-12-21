@@ -5,6 +5,7 @@ const itineraryType = gql`
     id: ID!
     title: String!
     description: String!
+    recommendations: String
   }
 
   type Query {
