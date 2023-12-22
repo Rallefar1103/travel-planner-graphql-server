@@ -21,7 +21,7 @@ async function startServer() {
 
   const PORT = process.env.PORT;
   app.listen(PORT, async () => {
-    console.log(`Server ready at http://localhost:9000${server.graphqlPath}`);
+    console.log(`Server ready at http://localhost:9000/graphql`);
     // await mockCoreServiceCall();
   });
 }
