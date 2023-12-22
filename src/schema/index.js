@@ -41,7 +41,8 @@ async function mockCoreServiceCall() {
         priceRange: "3",
       },
       attractionOptions: {
-        type: ["art", "sightseeing"],
+        type: ["art", "monuments"],
+        princeRange: "2",
       },
     },
   };
@@ -68,6 +69,7 @@ async function _executeMockMutation(mockItineraryInput) {
               }
               attractionOptions {
                 type
+                princeRange
               }
             }
             recommendedItineraryDescription
