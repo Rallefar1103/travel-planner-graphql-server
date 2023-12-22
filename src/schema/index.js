@@ -28,59 +28,59 @@ async function startServer() {
 
 startServer();
 
-async function mockCoreServiceCall() {
-  const mockItineraryInput = {
-    title: "Test Trip",
-    destination: "Copenhagen",
-    duration: "5 days",
-    budget: "2000",
-    userPreferences: {
-      diningOptions: {
-        type: "restaurants",
-        cuisine: "italian",
-        priceRange: "3",
-      },
-      attractionOptions: {
-        type: ["art", "monuments"],
-        princeRange: "2",
-      },
-    },
-  };
+// async function mockCoreServiceCall() {
+//   const mockItineraryInput = {
+//     title: "Test Trip",
+//     destination: "Copenhagen",
+//     duration: "5 days",
+//     budget: "2000",
+//     userPreferences: {
+//       diningOptions: {
+//         type: "restaurants",
+//         cuisine: "italian",
+//         priceRange: "3",
+//       },
+//       attractionOptions: {
+//         type: ["art", "monuments"],
+//         princeRange: "2",
+//       },
+//     },
+//   };
 
-  await _executeMockMutation(mockItineraryInput);
-}
+//   await _executeMockMutation(mockItineraryInput);
+// }
 
-async function _executeMockMutation(mockItineraryInput) {
-  try {
-    const response = await axios.post("http://localhost:9000/graphql", {
-      query: `
-        mutation CreateItinerary($input: ItineraryInput!) {
-          createItinerary(itineraryInput: $input) {
-            id
-            title
-            destination
-            duration
-            budget
-            userPreferences {
-              diningOptions {
-                type
-                cuisine
-                priceRange
-              }
-              attractionOptions {
-                type
-                princeRange
-              }
-            }
-            recommendedItineraryDescription
-          }
-        }
-      `,
-      variables: { input: mockItineraryInput },
-    });
+// async function _executeMockMutation(mockItineraryInput) {
+//   try {
+//     const response = await axios.post("http://localhost:9000/graphql", {
+//       query: `
+//         mutation CreateItinerary($input: ItineraryInput!) {
+//           createItinerary(itineraryInput: $input) {
+//             id
+//             title
+//             destination
+//             duration
+//             budget
+//             userPreferences {
+//               diningOptions {
+//                 type
+//                 cuisine
+//                 priceRange
+//               }
+//               attractionOptions {
+//                 type
+//                 princeRange
+//               }
+//             }
+//             recommendedItineraryDescription
+//           }
+//         }
+//       `,
+//       variables: { input: mockItineraryInput },
+//     });
 
-    console.log(response.data);
-  } catch (error) {
-    console.error(error);
-  }
-}
+//     console.log(response.data);
+//   } catch (error) {
+//     console.error(error);
+//   }
+// }

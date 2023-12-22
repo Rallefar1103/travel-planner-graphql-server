@@ -8,7 +8,7 @@ const itineraryType = gql`
   }
 
   type AttractionOptions {
-    type: [String]
+    type: String
     priceRange: String
   }
 
@@ -34,7 +34,7 @@ const itineraryType = gql`
   }
 
   input AttractionOptionsInput {
-    type: [String]
+    type: String
     priceRange: String
   }
 
