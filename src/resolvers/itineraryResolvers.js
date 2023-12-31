@@ -19,7 +19,7 @@ const itineraryResolvers = {
   Mutation: {
     // Resolver to create a new itinerary from the graphql mutation on the frotend
     createItinerary: async (_, { itineraryInput }) => {
-      console.log(itineraryInput);
+      console.log("GRAPHQL INPUT: ", itineraryInput);
       try {
         const response = await axios.post(
           `${baseURL}/itineraries`,
