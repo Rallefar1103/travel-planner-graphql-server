@@ -1,7 +1,7 @@
 const axios = require("axios");
 require("dotenv").config();
 
-const baseURL = process.env.CORE_SERVICE_URL;
+const baseURL = "http://core:8000/api";
 
 const itineraryResolvers = {
   Query: {
@@ -19,6 +19,7 @@ const itineraryResolvers = {
   Mutation: {
     // Resolver to create a new itinerary from the graphql mutation on the frotend
     createItinerary: async (_, { itineraryInput }) => {
+      console.log("Inside the graphqls-server createItinerary mutation");
       console.log("GRAPHQL INPUT: ", itineraryInput);
       try {
         const response = await axios.post(

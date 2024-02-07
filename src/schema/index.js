@@ -17,11 +17,11 @@ async function startServer() {
   await server.start();
 
   // Allows the GraphQL server to be accessed via an HTTP endpoint.
-  server.applyMiddleware({ app });
+  server.applyMiddleware({ app, path: "/api/graphql" });
 
   const PORT = process.env.PORT;
   app.listen(PORT, async () => {
-    console.log(`Server ready at http://localhost:9000/graphql`);
+    console.log(`Server ready at http://localhost:9000`);
     // await mockCoreServiceCall();
   });
 }
